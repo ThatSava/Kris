@@ -1,0 +1,16 @@
+[
+{
+  "modid": "kris",
+  "name": "Kris",
+  "description": "A mod.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Sava", "Minimal"],
+  "credits": "Kris: the guy this was named after.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
