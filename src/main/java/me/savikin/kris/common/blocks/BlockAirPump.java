@@ -2,13 +2,12 @@ package me.savikin.kris.common.blocks;
 
 import me.savikin.kris.common.blocks.te.TileEntityAirPump;
 import me.savikin.kris.common.helper.ChatHelper;
-import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+
 import net.minecraft.creativetab.CreativeTabs;
 
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -16,8 +15,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
-import net.minecraftforge.client.event.RenderGameOverlayEvent;
 
 import javax.annotation.Nullable;
 
@@ -30,6 +29,7 @@ public class BlockAirPump extends PSBlock
 {
     public float capChat;
     public float volChat;
+    public ChatHelper chat;
 
     public BlockAirPump()
     {
@@ -56,10 +56,11 @@ public class BlockAirPump extends PSBlock
         {
             capChat = getTE(worldIn, pos).getCapacity();
             volChat = getTE(worldIn, pos).getVolume();
-            System.out.println("Pressure Capacity:" + capChat + "bars");
-            System.out.println("Volume of Object:" + volChat + "m3");
+            chat.printChatMessage(new TextComponentString("Pressure Capacity: " + capChat + "bars"));
+            chat.printChatMessage(new TextComponentString("Volume of Object: " + volChat + "m3"));
             return true;
         }
         return false;
     }
+
 }

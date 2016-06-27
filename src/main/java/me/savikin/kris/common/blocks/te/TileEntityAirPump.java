@@ -1,29 +1,44 @@
 package me.savikin.kris.common.blocks.te;
 
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ITickable;
 
 /**
  * Created by Mark on 26/06/2016.
  */
 
-public class TileEntityAirPump extends TileEntity
+public class TileEntityAirPump extends TileEntity implements ITickable
 {
     public Double pressure;
-    public float baseVolume;
-    public int baseCapacity;
+    public float baseVolume = 2;
+    public int baseCapacity = 2;
     public float finalCapacity;
     public float finalVolume;
-    public float pressureMultiplier;
-    public float volumeModifier;
+    public float pressureMultiplier = 1;
+    public float volumeModifier = 1;
 
     public float getCapacity()
     {
-        return finalCapacity = baseCapacity * pressureMultiplier;
+        finalCapacity = baseCapacity * pressureMultiplier;
+        System.out.println(finalCapacity);
+        return finalCapacity;
+    }
+
+    public float checkCapacity()
+    {
+        return finalCapacity;
+    }
+
+    public float checkVolume()
+    {
+        return finalVolume;
     }
 
     public float getVolume()
     {
-        return finalVolume = baseVolume * volumeModifier;
+        finalVolume = baseVolume * volumeModifier;
+        System.out.println(finalVolume);
+        return finalVolume;
     }
 
     public void checkPressure()
@@ -38,5 +53,13 @@ public class TileEntityAirPump extends TileEntity
         {
             System.out.println("Pressure is equal to null.");
         }
+    }
+
+
+    @Override
+    public void update()
+    {
+        checkCapacity();
+        checkVolume();
     }
 }
