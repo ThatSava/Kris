@@ -9,13 +9,21 @@ import net.minecraft.tileentity.TileEntity;
 public class TileEntityAirPump extends TileEntity
 {
     public Double pressure;
+    public float baseVolume;
     public int baseCapacity;
     public float finalCapacity;
+    public float finalVolume;
     public float pressureMultiplier;
+    public float volumeModifier;
 
-    public void getCapacity()
+    public float getCapacity()
     {
-        finalCapacity = baseCapacity * pressureMultiplier;
+        return finalCapacity = baseCapacity * pressureMultiplier;
+    }
+
+    public float getVolume()
+    {
+        return finalVolume = baseVolume * volumeModifier;
     }
 
     public void checkPressure()
@@ -23,6 +31,7 @@ public class TileEntityAirPump extends TileEntity
         if (pressure != null) {
             if (pressure >= finalCapacity) {
                 // Does action related to pressure overload
+                this.worldObj.createExplosion(null, this.getPos().getX(), this.getPos().getY(), this.getPos().getZ(), 2f, false);
             }
         }
         else

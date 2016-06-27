@@ -1,11 +1,15 @@
 package me.savikin.kris.common.blocks;
 
 import me.savikin.kris.common.blocks.te.TileEntityAirPump;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+
 import net.minecraft.tileentity.TileEntity;
+
 import net.minecraft.world.World;
+
 
 /**
  * Created by Mark on 26/06/2016.
@@ -13,6 +17,8 @@ import net.minecraft.world.World;
 
 public class BlockAirPump extends PSBlock
 {
+    public TileEntity tileEntity = getTileEntity();
+
     public BlockAirPump()
     {
         super(Material.ROCK, MapColor.ADOBE);
@@ -26,4 +32,9 @@ public class BlockAirPump extends PSBlock
     {
         return new TileEntityAirPump();
     }
+
+    public TileEntity getTileEntity() {
+        return tileEntity;
+    }
+
 }

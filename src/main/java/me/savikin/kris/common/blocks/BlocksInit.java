@@ -1,5 +1,6 @@
 package me.savikin.kris.common.blocks;
 
+import me.savikin.kris.common.blocks.te.TileEntityAirPump;
 import me.savikin.kris.common.helper.BlockCreationHelper;
 import net.minecraft.block.Block;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -16,5 +17,6 @@ public class BlocksInit
     {
         air_pump = new BlockAirPump();
         BlockCreationHelper.createBlock(air_pump, "air_pump");
+        GameRegistry.registerTileEntity(TileEntityAirPump.class, "te_air_pump");
     }
 }
