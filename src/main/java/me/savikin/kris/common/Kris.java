@@ -15,7 +15,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class Kris
 {
     @SidedProxy(clientSide = Reference.client, serverSide = Reference.server)
-    public static CommonProxy proxy; //TODO change from common proxy to IProxy
+    public static IProxy proxy; //TODO change from common proxy to IProxy
 
     @Mod.EventHandler
     public static void preInit(FMLPreInitializationEvent e)
