@@ -33,7 +33,7 @@ public class BlockAirPump extends PSBlock
 
     public BlockAirPump()
     {
-        super(Material.ROCK, MapColor.ADOBE);
+        super(Material.ROCK, MapColor.ADOBE, "air_pump");
         setUnlocalizedName("air_pump");
         setRegistryName("air_pump");
         setCreativeTab(CreativeTabs.REDSTONE);

@@ -17,7 +17,7 @@ public class Reference
     public static final String mod_state = "pre";
 
     // Proxies
-    public static final String client = "me.savikin.kris.common.ClientProxy";
+    public static final String client = "me.savikin.kris.client.ClientProxy";
     public static final String server = "me.savikin.kris.common.CommonProxy";
 
     //Version Combination
